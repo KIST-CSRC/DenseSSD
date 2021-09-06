@@ -1,6 +1,5 @@
 # GPU Device
-# device = "cuda:0"
-device = "cpu"
+device = "cuda:0"
 
 # Path to data dir
 image_dir = 'dataset/test_sample'
