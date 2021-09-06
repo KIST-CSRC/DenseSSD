@@ -4,7 +4,8 @@
 This work contributes vial-positioning detection (Dense SSD) in autonomous system laboratory of KIST.
 
 We also provide the codes as follows:
-  1) Dense SSD (see [model](https://github.com/KIST-CSRC/vial-positioning-detection/model))
+  1) Dense SSD (see [model](https://github.com/KIST-CSRC/vial-positioning-detection/tree/master/model))
+  2) Test code (see [detect.py](https://github.com/KIST-CSRC/vial-positioning-detection/detect.py))
 
 ### Requirements
   1) [PyTorch](https://pytorch.org/)
