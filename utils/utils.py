@@ -27,22 +27,22 @@ label_class = {
 
 
 def cxcy_to_xy(cxcy):
-    return torch.cat([cxcy[:, :2] - (cxcy[:, 2:] / 2),  # x_min, y_min
-                      cxcy[:, :2] + (cxcy[:, 2:] / 2)], 1)  # x_max, y_max
+    return torch.cat([cxcy[:, :2] - (cxcy[:, 2:] / 2),
+                      cxcy[:, :2] + (cxcy[:, 2:] / 2)], 1)
 
 
 def gcxgcy_to_cxcy(gcxgcy, priors_cxcy):
-    return torch.cat([gcxgcy[:, :2] * priors_cxcy[:, 2:] / 10 + priors_cxcy[:, :2],  # c_x, c_y
-                      torch.exp(gcxgcy[:, 2:] / 5) * priors_cxcy[:, 2:]], 1)  # w, h
+    return torch.cat([gcxgcy[:, :2] * priors_cxcy[:, 2:] / 10 + priors_cxcy[:, :2],
+                      torch.exp(gcxgcy[:, 2:] / 5) * priors_cxcy[:, 2:]], 1)
 
 
-def resize(image, boxes, size=(300, 300), return_percent_coords=True):
+def resize(image, boxes, size=(300, 300)):
     # Resize image
     new_image = transform.resize(image, size)
 
     # Resize bounding boxes
     old_dims = torch.FloatTensor([image.width, image.height, image.width, image.height]).unsqueeze(0)
-    new_boxes = boxes / old_dims  # percent coordinates
+    new_boxes = boxes / old_dims
 
     return new_image, new_boxes
 
@@ -69,13 +69,12 @@ def compute_iou(set_1, set_2):
 
 
 def detect_objects(model, predicted_locs, predicted_scores, min_score, max_overlap, top_k):
+    """
+       At certain parts, we borrow the code from https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Object-Detection
+    """
     batch_size = predicted_locs.size(0)
     predicted_scores = F.softmax(predicted_scores, dim=2)
-
-    # Lists to store final predicted boxes, labels, and scores for all images
-    all_images_boxes = []
-    all_images_labels = []
-    all_images_scores = []
+    final_images_boxes, final_images_labels, final_images_scores = [], [], []
 
     for i in range(batch_size):
         decoded_locs = cxcy_to_xy(gcxgcy_to_cxcy(predicted_locs[i], model.priors_cxcy))
@@ -137,8 +136,8 @@ def detect_objects(model, predicted_locs, predicted_scores, min_score, max_overl
             image_labels = image_labels[sort_ind][:top_k]
 
         # Append to lists that store predicted boxes and scores for all images
-        all_images_boxes.append(image_boxes)
-        all_images_labels.append(image_labels)
-        all_images_scores.append(image_scores)
+        final_images_boxes.append(image_boxes)
+        final_images_labels.append(image_labels)
+        final_images_scores.append(image_scores)
 
-    return all_images_boxes, all_images_labels, all_images_scores
+    return final_images_boxes, final_images_labels, final_images_scores
