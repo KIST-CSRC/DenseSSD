@@ -10,11 +10,17 @@
   4) [OpenCV](https://pypi.org/project/opencv-python/)
 
 ### Pre-trained Model
-Please ensure that you set up our directories as follows:
+Please ensure that after unzipping the pre-trained folder and set up the directories as follows:
 ```
 Vial-positioning
+├── dataset
+│   └── test_sample
+├── model
+│   └── denseSSD.py
 ├── pre-trained
 │   └── model.pth
+├── utils
+│   └── utils.py
 ├── config.py
 └── detect.py
 ```
