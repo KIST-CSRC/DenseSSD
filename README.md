@@ -47,6 +47,8 @@ We tested the codes with:
   2) PyTorch 1.7.0 under Windows 10 and Anaconda3 (Python 3.7)
 
 
-## Reference
 
-`add later`
+## Reference
+Please cite us if you are using our model in your research work: <br />
+
+  [1] Leslie Ching Ow Tiong, Hyuk Jun Yoo, Na Yeon Kim, Kwan-Young Lee, Sang Soo Han, and Donghun Kim, “Machine vision for vial positioning detection toward the safe automation of material synthesis”, *arXiv*, 2022; (see [link](https://arxiv.org/abs/2206.07272)).
