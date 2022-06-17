@@ -9,7 +9,7 @@
 This repository contains an DenseSSD that predicts vial-positioning detection using object detection techniques. DenseSSD can play vital roles in addressing these safety issues as well as can alert to user's messenger to notify and fix safety issues ASAP.
 
 <p align="center">
-  <img src="./info/video1_v7.gif" width="70%" height="70%" />
+  <img src="https://github.com/KIST-CSRC/DenseSSD/blob/main/info/video1_v7.gif" width="70%" height="70%" />
 </p>
 
 ## Requirements
