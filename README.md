@@ -8,8 +8,9 @@
 
 This repository contains an DenseSSD that predicts vial-positioning detection using object detection techniques. DenseSSD can play vital roles in addressing these safety issues as well as can alert to user's messenger to notify and fix safety issues ASAP.
 
-
-<img src="./info/video1_v7.gif" width="70%" height="70%" />
+<p align="center">
+  <img src="./info/video1_v7.gif" width="70%" height="70%" />
+</p>
 
 ## Requirements
   1) [PyTorch](https://pytorch.org/)
