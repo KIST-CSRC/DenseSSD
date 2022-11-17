@@ -2,16 +2,10 @@ import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 warnings.filterwarnings("ignore", category=UserWarning)
 
-from PIL import Image, ImageDraw, ImageFont
-from model.denseSSD import denseSSD
+from PIL import ImageDraw, ImageFont
 from torchvision import transforms
 from utils.utils import *
-import config
-import os
 import cv2
-import numpy as np
-from natsort import natsorted
-
 
 # Transforms
 resize = transforms.Resize((300, 300))
@@ -41,7 +35,7 @@ def visualize_detection(model, original_image, min_score, max_overlap, top_k, pa
         return original_image, 0
 
     draw_label = ImageDraw.Draw(original_image)
-    font = ImageFont.truetype("/usr/share/fonts/truetype/freefont/FreeMono.ttf", 15, encoding="unic")
+    font = ImageFont.truetype("arial.ttf", 15, encoding="unic")
 
     for i in range(bboxes.size(0)):
         bboxes_coor = bboxes[i].tolist()
@@ -60,29 +54,3 @@ def visualize_detection(model, original_image, min_score, max_overlap, top_k, pa
     cv2.imwrite(path, cv2.cvtColor(np.asarray(original_image), cv2.COLOR_RGB2BGR))
 
     return original_image, bboxes.size(0)
-
-
-if __name__ == '__main__':
-    image_dir = config.image_dir
-    files = os.listdir(image_dir)
-    files = natsorted(files)
-    print("Detection begins!")
-
-    # Load model checkpoint
-    print("\nLoading pre-trained model!")
-    model_path = config.model_path
-    model = denseSSD(n_classes=config.C)
-    model.load_state_dict(torch.load(model_path))
-    model.to(config.device)
-    model.eval()
-
-    for file in files:
-        image_path = os.path.join(image_dir, file)
-        original_image = Image.open(image_path, mode='r')
-        original_image = original_image.convert('RGB')
-
-        _, objects = visualize_detection(model, original_image, min_score=0.2, max_overlap=0.5, top_k=200,
-                                         path='result/'+'test_sample_'+file)
-        print("Test scene file - %s: %d vials detected!" % (file, objects))
-
-    print("\nTest completed!\n")
