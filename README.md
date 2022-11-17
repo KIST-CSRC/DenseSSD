@@ -16,11 +16,11 @@ This repository contains an DenseSSD that predicts vial-positioning detection us
 
 **Using conda**
 ```bash
-conda env create -f conda_requirements.txt
+conda env create -f requirements_conda.txt
 ```
 **Using pip**
 ```bash
-pip install -r requirements.txt
+pip install -r requirements_pip.txt
 ```
 
 ## Pre-trained Model
