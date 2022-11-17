@@ -85,7 +85,7 @@ import torch
 | ``test_sample_image_dir``| Data path | directory path of test images.|
 | ``test_result_image_dir``| Data path | directory path of results of test images.|
 | ``image_dir_train``| Data path | directory path of training images.|
-| ``info_dir_train``| Data path | Tokenizes a SELFIES string into its individual symbols.|
+| ``info_dir_train``| Data path | directory path of training images's annotation.|
 | ``train_label`` | Data path | training labels on text files which use YOLO dataset types (see on [dataset/train.txt](dataset/train.txt)).|
 | ``val_label`` | Data path | validation labels on text files which use YOLO dataset types (see on [dataset/valid.txt](dataset/valid.txt)).|
 | ``model_path`` | Data path | set pre-trained model path (if we have pre-trained model).|
