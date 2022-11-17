@@ -3,8 +3,9 @@ import torch.nn.functional as F
 import torchvision.transforms.functional as transform
 import sys
 import random
-import config
+from PIL import Image
 import numpy as np
+import config
 
 
 sys.path.insert(0, '..')
@@ -26,9 +27,19 @@ label_class = {
 }
 
 
+def xy_to_cxcy(xy):
+    return torch.cat([(xy[:, 2:] + xy[:, :2]) / 2,  # c_x, c_y
+                      xy[:, 2:] - xy[:, :2]], 1)  # w, h
+
+
 def cxcy_to_xy(cxcy):
     return torch.cat([cxcy[:, :2] - (cxcy[:, 2:] / 2),
                       cxcy[:, :2] + (cxcy[:, 2:] / 2)], 1)
+
+
+def cxcy_to_gcxgcy(cxcy, priors_cxcy):
+    return torch.cat([(cxcy[:, :2] - priors_cxcy[:, :2]) / (priors_cxcy[:, 2:] / 10),  # g_c_x, g_c_y
+                      torch.log(cxcy[:, 2:] / priors_cxcy[:, 2:]) * 5], 1)  # g_w, g_h
 
 
 def gcxgcy_to_cxcy(gcxgcy, priors_cxcy):
@@ -141,3 +152,60 @@ def detect_objects(model, predicted_locs, predicted_scores, min_score, max_overl
         final_images_scores.append(image_scores)
 
     return final_images_boxes, final_images_labels, final_images_scores
+
+
+def random_crop(img, boxes, labels):
+    if random.random() < 0.5:
+        img, boxes = flip(img, boxes)
+
+    img = np.array(img)
+    boxes = torch.FloatTensor(boxes)
+    labels = torch.LongTensor(labels)
+    center = (boxes[:, 2:] + boxes[:, :2]) / 2.0
+
+    w_orig, h_orig, _ = img.shape
+    h = random.uniform(0.5 * h_orig, h_orig)
+    w = random.uniform(0.5 * w_orig, w_orig)
+    y = random.uniform(10, h_orig - h)
+    x = random.uniform(30, w_orig - w)
+    h, w, x, y = int(h), int(w), int(x), int(y)
+
+    center = center - torch.FloatTensor([[x, y]]).expand_as(center) # [n, 2]
+    mask_x = (center[:, 0] >= 0) & (center[:, 0] < w) # [n,]
+    mask_y = (center[:, 1] >= 0) & (center[:, 1] < h) # [n,]
+    mask = (mask_x & mask_y).view(-1, 1) # [n, 1], mask for the boxes within the image after crop.
+
+    boxes_out = boxes[mask.expand_as(boxes)].view(-1, 4) # [m, 4]
+    if len(boxes_out) == 0:
+        img = Image.fromarray(img)
+        return img, boxes, labels
+    shift = torch.FloatTensor([[x, y, x, y]]).expand_as(boxes_out) # [m, 4]
+
+    boxes_out = boxes_out - shift
+    boxes_out[:, 0] = boxes_out[:, 0].clamp_(min=0, max=w)
+    boxes_out[:, 2] = boxes_out[:, 2].clamp_(min=0, max=w)
+    boxes_out[:, 1] = boxes_out[:, 1].clamp_(min=0, max=h)
+    boxes_out[:, 3] = boxes_out[:, 3].clamp_(min=0, max=h)
+
+    labels_out = labels[mask.view(-1)]
+    img_out = img[y:y+h, x:x+w, :]
+    img_out = Image.fromarray(img_out)
+
+    if random.random() > 0.5:
+        img_out, boxes_out = flip(img_out, boxes_out)
+
+    return img_out, boxes_out, labels_out
+
+
+def flip(image, boxes):
+    # Flip image
+    new_image = transform.hflip(image)
+
+    boxes = np.asarray(boxes)
+    # Flip boxes
+    new_boxes = boxes
+    new_boxes[:, 0] = image.width - boxes[:, 0] - 1
+    new_boxes[:, 2] = image.width - boxes[:, 2] - 1
+    new_boxes = new_boxes[:, [2, 1, 0, 3]]
+
+    return new_image, new_boxes
