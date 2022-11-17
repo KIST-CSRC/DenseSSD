@@ -53,14 +53,14 @@ DenseSSD
 └── how_to_use_DenseSSD.ipynb
 ```
 
-## Test code
+## Code usage
 
 ### Overview
 We also provide the codes as follows:
   1) DenseSSD architecture & MultiBoxLoss (see [model](https://github.com/KIST-CSRC/DenseSSD/tree/master/model))
   2) train DenseSSD model (see [train.py](https://github.com/KIST-CSRC/DenseSSD/tree/master/train.py))
   3) detection code for test sample (see [detect.py](https://github.com/KIST-CSRC/DenseSSD/tree/main/detect.py))
-  4) Test code for educational version (see [how_to_use_DenseSSD.ipynb jupyter-notebook](https://github.com/KIST-CSRC/DenseSSD/tree/main/how_to_use_DenseSSD.ipynb))
+  4) More detailed usage for DenseSSD (see [how_to_use_DenseSSD.ipynb jupyter-notebook](https://github.com/KIST-CSRC/DenseSSD/tree/main/how_to_use_DenseSSD.ipynb))
 
 ### Examples
 
@@ -89,11 +89,11 @@ import torch
 | ``train_label`` | Data path | training labels on text files which use YOLO dataset types (see on [dataset/train.txt](dataset/train.txt)).|
 | ``val_label`` | Data path | validation labels on text files which use YOLO dataset types (see on [dataset/valid.txt](dataset/valid.txt)).|
 | ``model_path`` | Data path | set pre-trained model path (if we have pre-trained model).|
-| ``C`` | Hyperparameters | input the number of candidates, (ex. C=3, generate 3 candidate boxes of each objects).|
-| ``batch_size`` | Hyperparameters | input batch_size, it depends on researchers.|
-| ``init_lr`` | Hyperparameters | input initial learning rate, it depends on num_epochs (if you control steps of lr reduction, please looking for update_lr function in train.py ).|
-| ``weight_decay`` | Hyperparameters | input weight_decay, it depends on researchers.|
-| ``num_epochs`` | Hyperparameters | input epochs, it depends on researchers.|
+| ``C`` | Hyperparameters | the number of classes, (ex. C=3, define the class number by adding 1 for 'background' label).|
+| ``batch_size`` | Hyperparameters | batch_size, it depends on researchers.|
+| ``init_lr`` | Hyperparameters | initial learning rate, it depends on num_epochs (if you control steps of lr reduction, please looking for update_lr function in train.py ).|
+| ``weight_decay`` | Hyperparameters | weight_decay, it depends on researchers.|
+| ``num_epochs`` | Hyperparameters | epochs, it depends on researchers.|
 
 **model/denseSSD.py**
 
@@ -115,7 +115,7 @@ from train import train # train function
 from detect import visualize_detection # test function
 ```
 
-**Train model**
+**Examples: Train model**
 
 ```python
 torch.cuda.empty_cache()
@@ -129,7 +129,7 @@ model.to(device) # allocate our model on GPU
 train(model, config)
 ```
 
-**Load pre-trained model**
+**Examples: Load pre-trained model**
 
 ```python
 torch.cuda.empty_cache()
@@ -144,7 +144,7 @@ model.to(config.device) # allocate our model on GPU
 model.eval()
 ```
 
-**Testing samples**
+**Examples: Testing samples**
 
 ```python
 print('---------------------------------')
