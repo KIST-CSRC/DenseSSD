@@ -1,0 +1,84 @@
+{
+    "annotations": [
+        {
+            "area": null,
+            "bbox": [
+                513,
+                202,
+                55,
+                85
+            ],
+            "category_id": 2,
+            "id": 0,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    513,
+                    202,
+                    568,
+                    287
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                494,
+                103,
+                77,
+                79
+            ],
+            "category_id": 2,
+            "id": 1,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    494,
+                    103,
+                    571,
+                    182
+                ]
+            ]
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "success",
+            "supercategory": "vial"
+        },
+        {
+            "id": 2,
+            "name": "fail",
+            "supercategory": "vial"
+        }
+    ],
+    "images": [
+        {
+            "coco_url": "",
+            "date_captured": "2021-08-06 16:17:28.591061",
+            "file_name": "Solution_raw_09283.jpg",
+            "flickr_url": "",
+            "height": 720,
+            "id": "09283",
+            "license": 1,
+            "width": 1280
+        }
+    ],
+    "info": {
+        "contributor": "KIST CSRC",
+        "description": "Vial Positioning Dataset",
+        "url": "https://github.com/KIST-CSRC/DenseSSD",
+        "version": "0.1.0",
+        "year": 2022
+    },
+    "licenses": [
+        {
+            "id": 1,
+            "name": "Attribution-NonCommercial-ShareAlike License",
+            "url": "http://creativecommons.org/licenses/by-nc-sa/2.0/"
+        }
+    ]
+}

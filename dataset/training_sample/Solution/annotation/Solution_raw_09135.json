@@ -1,0 +1,210 @@
+{
+    "annotations": [
+        {
+            "area": null,
+            "bbox": [
+                478,
+                208,
+                74,
+                74
+            ],
+            "category_id": 1,
+            "id": 0,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    478,
+                    208,
+                    552,
+                    282
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                610,
+                444,
+                89,
+                90
+            ],
+            "category_id": 1,
+            "id": 1,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    610,
+                    444,
+                    699,
+                    534
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                558,
+                123,
+                61,
+                81
+            ],
+            "category_id": 2,
+            "id": 2,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    558,
+                    123,
+                    619,
+                    204
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                606,
+                204,
+                82,
+                79
+            ],
+            "category_id": 1,
+            "id": 3,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    606,
+                    204,
+                    688,
+                    283
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                518,
+                186,
+                90,
+                60
+            ],
+            "category_id": 2,
+            "id": 4,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    518,
+                    186,
+                    608,
+                    246
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                526,
+                417,
+                109,
+                56
+            ],
+            "category_id": 2,
+            "id": 5,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    526,
+                    417,
+                    635,
+                    473
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                559,
+                302,
+                99,
+                57
+            ],
+            "category_id": 2,
+            "id": 6,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    559,
+                    302,
+                    658,
+                    359
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                459,
+                311,
+                89,
+                90
+            ],
+            "category_id": 1,
+            "id": 7,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    459,
+                    311,
+                    548,
+                    401
+                ]
+            ]
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "success",
+            "supercategory": "vial"
+        },
+        {
+            "id": 2,
+            "name": "fail",
+            "supercategory": "vial"
+        }
+    ],
+    "images": [
+        {
+            "coco_url": "",
+            "date_captured": "2021-08-04 15:31:35.832520",
+            "file_name": "Solution_raw_09135.jpg",
+            "flickr_url": "",
+            "height": 720,
+            "id": "09135",
+            "license": 1,
+            "width": 1280
+        }
+    ],
+    "info": {
+        "contributor": "KIST CSRC",
+        "description": "Vial Positioning Dataset",
+        "url": "https://github.com/KIST-CSRC/DenseSSD",
+        "version": "0.1.0",
+        "year": 2022
+    },
+    "licenses": [
+        {
+            "id": 1,
+            "name": "Attribution-NonCommercial-ShareAlike License",
+            "url": "http://creativecommons.org/licenses/by-nc-sa/2.0/"
+        }
+    ]
+}

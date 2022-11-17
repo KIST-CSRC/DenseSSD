@@ -1,0 +1,189 @@
+{
+    "annotations": [
+        {
+            "area": null,
+            "bbox": [
+                625,
+                318,
+                93,
+                93
+            ],
+            "category_id": 1,
+            "id": 0,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    625,
+                    318,
+                    718,
+                    411
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                475,
+                318,
+                93,
+                93
+            ],
+            "category_id": 1,
+            "id": 1,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    475,
+                    318,
+                    568,
+                    411
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                467,
+                452,
+                93,
+                93
+            ],
+            "category_id": 1,
+            "id": 2,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    467,
+                    452,
+                    560,
+                    545
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                625,
+                116,
+                78,
+                82
+            ],
+            "category_id": 1,
+            "id": 3,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    625,
+                    116,
+                    703,
+                    198
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                630,
+                457,
+                93,
+                93
+            ],
+            "category_id": 1,
+            "id": 4,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    630,
+                    457,
+                    723,
+                    550
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                632,
+                210,
+                78,
+                82
+            ],
+            "category_id": 1,
+            "id": 5,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    632,
+                    210,
+                    710,
+                    292
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                489,
+                206,
+                78,
+                82
+            ],
+            "category_id": 1,
+            "id": 6,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    489,
+                    206,
+                    567,
+                    288
+                ]
+            ]
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "success",
+            "supercategory": "vial"
+        },
+        {
+            "id": 2,
+            "name": "fail",
+            "supercategory": "vial"
+        }
+    ],
+    "images": [
+        {
+            "coco_url": "",
+            "date_captured": "2021-06-17 10:52:27.909863",
+            "file_name": "Empty_raw_01505.jpg",
+            "flickr_url": "",
+            "height": 720,
+            "id": "01505",
+            "license": 1,
+            "width": 1280
+        }
+    ],
+    "info": {
+        "contributor": "KIST CSRC",
+        "description": "Vial Positioning Dataset",
+        "url": "https://github.com/KIST-CSRC/DenseSSD",
+        "version": "0.1.0",
+        "year": 2022
+    },
+    "licenses": [
+        {
+            "id": 1,
+            "name": "Attribution-NonCommercial-ShareAlike License",
+            "url": "http://creativecommons.org/licenses/by-nc-sa/2.0/"
+        }
+    ]
+}

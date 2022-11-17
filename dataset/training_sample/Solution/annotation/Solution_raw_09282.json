@@ -1,0 +1,105 @@
+{
+    "annotations": [
+        {
+            "area": null,
+            "bbox": [
+                502,
+                288,
+                56,
+                91
+            ],
+            "category_id": 2,
+            "id": 0,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    502,
+                    288,
+                    558,
+                    379
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                485,
+                251,
+                55,
+                85
+            ],
+            "category_id": 2,
+            "id": 1,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    485,
+                    251,
+                    540,
+                    336
+                ]
+            ]
+        },
+        {
+            "area": null,
+            "bbox": [
+                495,
+                101,
+                80,
+                75
+            ],
+            "category_id": 2,
+            "id": 2,
+            "image_id": 0,
+            "iscrowd": 0,
+            "segmentation": [
+                [
+                    495,
+                    101,
+                    575,
+                    176
+                ]
+            ]
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "success",
+            "supercategory": "vial"
+        },
+        {
+            "id": 2,
+            "name": "fail",
+            "supercategory": "vial"
+        }
+    ],
+    "images": [
+        {
+            "coco_url": "",
+            "date_captured": "2021-08-06 16:17:28.255060",
+            "file_name": "Solution_raw_09282.jpg",
+            "flickr_url": "",
+            "height": 720,
+            "id": "09282",
+            "license": 1,
+            "width": 1280
+        }
+    ],
+    "info": {
+        "contributor": "KIST CSRC",
+        "description": "Vial Positioning Dataset",
+        "url": "https://github.com/KIST-CSRC/DenseSSD",
+        "version": "0.1.0",
+        "year": 2022
+    },
+    "licenses": [
+        {
+            "id": 1,
+            "name": "Attribution-NonCommercial-ShareAlike License",
+            "url": "http://creativecommons.org/licenses/by-nc-sa/2.0/"
+        }
+    ]
+}
