@@ -170,8 +170,8 @@ print("\nTest completed!\n")
 
 ## Compatibility
 We tested the codes with:
-  1) PyTorch 1.7.0 under Ubuntu OS 16.04/18.04 LTS and Anaconda3 (Python 3.7)
-  2) PyTorch 1.7.0 under Windows 10 and Anaconda3 (Python 3.7)
+  1) PyTorch 1.7.0 under Ubuntu OS 16.04/18.04 LTS and Anaconda3 (Python 3.7 and above)
+  2) PyTorch 1.7.0 under Windows 10 and Anaconda3 (Python 3.7 and above)
 
 ## Robotics settings
 <p align="center">
