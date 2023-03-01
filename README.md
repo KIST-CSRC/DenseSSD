@@ -183,6 +183,9 @@ We tested the codes with:
 - Stirrer: DaiHan Scientific
 - Robot arm: Niryo ([detail settings](https://github.com/NiryoRobotics/niryo_one_ros))
 
+## Datasets
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7687879.svg)](https://doi.org/10.5281/zenodo.7687879)
+
 ## Reference
 Please cite us if you are using our model in your research work: <br />
 
