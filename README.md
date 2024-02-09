@@ -1,4 +1,4 @@
-# DenseSSD : Machine vision for vial-positioning detections towards safe automation of material synthesis
+# DenseSSD : Machine vision-based detections for transparent chemical vessels towards safe automation of material synthesis
 
 
 ## Introduction
