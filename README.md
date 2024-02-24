@@ -188,5 +188,14 @@ We tested the codes with:
 
 ## Reference
 Please cite us if you are using our model in your research work: <br />
-
-  [1] Leslie Ching Ow Tiong, Hyuk Jun Yoo, Nayeon Kim, Kwan-Young Lee, Sang Soo Han, and Donghun Kim, “Machine vision for vial positioning detection toward the safe automation of material synthesis”, *arXiv*, 2022; (see [link](https://arxiv.org/abs/2206.07272)).
+```
+@article{DenseSSD2024,
+    author    = {Tiong, Leslie Ching Ow and Yoo, Hyuk Jun and Kim, Nayeon and Kim, Chansoo and Lee, Kwan-Young and Han, Sang Soo and Kim, Donghun},
+    title     = {Machine vision-based detections of transparent chemical vessels toward the safe automation of material synthesis},
+    journal   = {npj Computational Materials},
+    year      = {2024},
+    volume    = {10},
+    number    = {42},
+    doi       = {10.1038/s41524-024-01216-7}
+}
+```
